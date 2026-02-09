@@ -1,127 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dinshiya Sunday | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinshiya Sunday | Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #004aad;
+            --accent: #00d2ff;
+            --text-dark: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.85);
+        }
 
-<!-- Google Font (different characters / stylish text) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #87CEEB, #1E90FF, #004aad);
+            background-attachment: fixed;
+            margin: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-<style>
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
-    margin: 0;
-    padding: 0;
-}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-.container {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-}
+        /* --- Glass Card Effect --- */
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-.header {
-    background-color: #004aad;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-.section {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #ccc;
-}
+        /* --- Header Section --- */
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
 
-h1 {
-    margin: 5px;
-}
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
 
-h3 {
-    color: #004aad;
-}
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: 10px;
-}
-.media-box {
-    border: 2px dashed #004aad;
-    padding: 20px;
-}
-</style>
+        /* --- Profile Image --- */
+        .profile-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: -90px auto 20px; /* Pulls image up into header space */
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Typography --- */
+        h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .detail-row strong { color: var(--primary); }
+
+        /* --- Grid for Hobbies --- */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hobby-item {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* --- Media Sections --- */
+        .media-placeholder {
+            background: #f0f2f5;
+            border: 2px dashed #cbd5e0;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            color: #718096;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .card { padding: 25px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="container">
+    <header class="header">
+        <span class="badge">Portfolio 2025</span>
+        <h1>Dinshiya Sunday</h1>
+        <p>Future Web & App Developer</p>
+    </header>
 
-    <div class="header">
-        <h1>✨ Dinshiya Sunday ✨</h1>
-        <h3>Taraba State University, Jalingo</h3>
+    <div class="card">
+        <div class="profile-container">
+            <!-- Replace with your actual image link -->
+            <img src="https://via.placeholder.com" alt="Dinshiya Sunday" class="profile-pic">
+        </div>
+        
+        <h3>📌 Academic Profile</h3>
+        <div class="detail-row"><span>Matric Number:</span> <strong>TSU/FSC/CS/24/1169</strong></div>
+        <div class="detail-row"><span>Faculty:</span> <strong>Computing & AI</strong></div>
+        <div class="detail-row"><span>Department:</span> <strong>Computer Science</strong></div>
+        <div class="detail-row"><span>Institution:</span> <strong>Taraba State University</strong></div>
     </div>
 
-    <div class="section">
-        <h3>📌 Student Details</h3>
-        <p><strong>Matric Number:</strong> TSU/FSC/CS/24/1169</p>
-        <p><strong>Faculty:</strong> Computing and Artificial Intelligence</p>
-        <p><strong>Department:</strong> Computer Science</p>
-    </div>
-
-    <div class="section">
+    <div class="card">
         <h3>👩‍💻 About Me</h3>
-        <p>
-        I am a Computer Science student with a strong passion for technology, creativity, 
-        and innovation. I aspire to become a skilled web designer and app developer, 
-        building beautiful, functional, and impactful digital solutions. 
-        </p>
-    </div>
-
-    <div class="section">
-        <h3>🎯 My Hobbies</h3>
-        <p>• Reading 📚</p>
-        <p>• Coding 💻</p>
-        <p>• Watching tech videos 🎥</p>
-        <p>• Designing websites 🎨</p>
-    </div>
-
-    <div class="section">
-        <h3>🖼 My Pictures</h3>
-        <div class="media-box">
-            <p>Upload your picture here</p>
-            <img src="your-picture.jpg" class="profile-pic">
+        <p>I am a Computer Science student with a strong passion for technology, creativity, and innovation. I aspire to become a skilled web designer and app developer, building beautiful, functional, and impactful digital solutions.</p>
+        
+        <div class="hobbies-grid">
+            <div class="hobby-item">📚 Reading</div>
+            <div class="hobby-item">💻 Coding</div>
+            <div class="hobby-item">🎥 Tech Videos</div>
+            <div class="hobby-item">🎨 Design</div>
         </div>
     </div>
 
-    <div class="section">
-        <h3>🎬 My Videos</h3>
-        <div class="media-box">
-            <p>Paste your video link here</p>
-            <video width="300" controls>
+    <div class="card">
+        <h3>🎬 My Media</h3>
+        <div class="media-placeholder">
+            <p>Project Video or Introduction</p>
+            <video width="100%" style="border-radius: 10px;" controls>
                 <source src="your-video.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
-    <div class="section">
-        <h3>🏠 Home Information</h3>
-        <p><strong>Home Address:</strong> ________________________</p>
-        <p><strong>Hometown:</strong> ________________________</p>
-        <p><strong>State:</strong> ________________________</p>
+    <div class="card">
+        <h3>🏠 Location</h3>
+        <p><strong>School:</strong> Taraba State University, Jalingo, Nigeria.</p>
+        <p><strong>Home:</strong> [Enter Your Address Here]</p>
     </div>
 
-    <div class="section">
-        <h3>🏫 School Address</h3>
-        <p>Taraba State University, Jalingo, Taraba State, Nigeria.</p>
-    </div>
-
+    <footer>
+        &copy; 2025 Dinshiya Sunday. Designed with ✨ in Jalingo.
+    </footer>
 </div>
 
 </body>
